@@ -3,9 +3,26 @@
 import sys
 
 def making_change(amount, denominations):
-  # Your code here
+  
+if amount < 0:
+  return "Amount can't be negative."
 
-  pass
+cache = [0]*(amount + 1) # we want an entry for index = amount
+
+# base case
+cache[0] = 1
+
+# iteratively build cache
+# per denomination, per number of coins
+for d in denominations:
+  i = 1
+  while (i * d) < amount:
+    # do something
+    i += 1
+
+return  # value found in a single column cache
+        # or some weird value that is the sum of values in different columms
+
 
 
 if __name__ == "__main__":
