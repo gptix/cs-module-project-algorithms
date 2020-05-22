@@ -6,9 +6,36 @@ from collections import namedtuple
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
-    # Your code here
 
-    pass
+  # can't take the solid gold full-scale elephant
+  small_enough_items = [eye for eye in items if eye['size'] <= capacity]
+
+  # extend the tuples by density = value/size
+
+  # sort the tuples by size and density (smallest, highest first)
+  # unclear which has priority
+
+  the_goods = []
+
+  remaining_capacity = capacity
+
+  while remaining_capacity > 0:
+
+    # filter for size-relevance
+    while small_enough_items[0][size] > remaining_capacity: 
+      small_enough_items.pop(0)
+
+    next_thing = small_enough_items.pop(0) # add the next-densest item
+    the_goods.append[next_thing]
+    
+    remaining_capacity -= next_thing['size']
+
+  return the_goods
+
+
+  # This is not perfect.  There can be a case where a dense but large item would
+  # preclude a number of smaller, nearly identically dense items, that could be 
+  # siezed, leaving room for the next valuable item.
 
 
 if __name__ == '__main__':
