@@ -1,11 +1,12 @@
 '''
-Input: a List of integers
-Returns: a List of integers
+Input: a List of integers.
+Returns: a List of integers,with all '0' to the right.
 '''
-def moving_zeroes(arr):
-    # Your code here
-
-    pass
+def moving_zeroes(lst):
+    length = len(lst)
+    zero_count = lst.count(0)
+    lst = [i for i in lst if i is not 0]
+    return lst + [0]*zero_count
 
 
 if __name__ == '__main__':
